@@ -73,13 +73,17 @@
 
 <div class="ProductGrid">
 	<div class="ProductGrid--content">
+
+{{ $lang := $.Site.Language }}
+<p>{{ $.Site.BaseURL }}</p>
+    <p>{{ $lang }}</p>
     {{- range $key := $order -}}
       {{- $data := (index $.Site.Data $key) -}}
       {{- $product := (index $data "product") -}}
       {{- $wrap := default false $product.wrap -}}
-      <a class="ProductGrid--link" data-wrap-title="{{ $wrap }}" href="{{ $product.url }}">
+      <a class="ProductGrid--link" data-wrap-title="{{ $wrap }}" href="{{ $lang }}{{ $product.url }}">
         <div>{{ safeHTML $data.logo }}</div>
-        <span>{{ $product.title }}</span>
+        <span>{{ $product.title }} {{ $lang }}</span>
       </a>
     {{- end -}}
   </div>

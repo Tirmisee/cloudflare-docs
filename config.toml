@@ -1,8 +1,13 @@
 baseURL = "https://developers.cloudflare.com"
 
 title = "Cloudflare Developers"
-languageCode = "en"
+
 DefaultContentLanguage = "en"
+[languages]
+[languages.en]
+    weight = 1
+[languages.th]
+    weight = 2
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
 
